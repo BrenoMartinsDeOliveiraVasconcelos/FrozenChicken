@@ -1,6 +1,7 @@
 #include <fstream>
 #include <QMessageBox>
 #include <iostream>
+#include <vector>
 
 #include "frozenchicken.h"
 #include "ui_frozenchicken.h"
@@ -71,12 +72,51 @@ void FrozenChicken::on_exit_clicked()
 {
     //Para fechar a thread do alarme
     std::fstream dclose;
+    std::fstream alarmfc;
+    std::string txt;
 
-    dclose.open("C:\\FC_Backend\\pid\\alarm_thread", std::ios::out);
-    dclose << "1";
+    alarmfc.open("C:\\FC_Backend\\alarm.fc", std::ios::in);
 
-    dclose.close();
+    if (alarmfc.is_open()){
+        while (getline(alarmfc, txt)){
+            if (txt == "0"){
+                dclose.open("C:\\FC_Backend\\pid\\alarm_thread", std::ios::out);
+                dclose << "1";
 
-    exit(0);
+                dclose.close();
+
+                exit(0);
+            }else{
+                QMessageBox msg;
+
+                msg.setText("Não foi possível fechar devido ao alarme estar ativado.");
+                msg.setStandardButtons(QMessageBox::Cancel);
+                msg.setIcon(QMessageBox::Warning);
+
+                msg.exec();
+            }
+            break;
+        }
+    }
+}
+
+
+void FrozenChicken::on_verticalScrollBar_sliderMoved(int position)
+{
+    ui->registro2->scroll(0, position);
+    return;
+}
+
+
+void FrozenChicken::on_registerbut_clicked()
+{
+    return;
+    ui->registro2->setRowCount(5);
+    ui->registro2->setColumnCount(2);
+    int row = 0;
+    int column = 0;
+
+    QTableWidgetItem *test = new QTableWidgetItem(tr("%1").arg((row+1)*(column+1)));
+    ui->registro2->setItem(row, column, test);
 }
 

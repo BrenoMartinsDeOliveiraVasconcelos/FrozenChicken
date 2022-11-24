@@ -22,6 +22,10 @@ private slots:
 
     void on_exit_clicked();
 
+    void on_verticalScrollBar_sliderMoved(int position);
+
+    void on_registerbut_clicked();
+
 private:
     Ui::FrozenChicken *ui;
 };

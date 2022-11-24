@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <thread>
+#include <vector>
 
 // Função para checar se o alarme foi acionado ou não
 void alarmChecker(){
