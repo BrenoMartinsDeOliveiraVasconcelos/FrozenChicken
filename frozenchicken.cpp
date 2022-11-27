@@ -5,6 +5,7 @@
 
 #include "frozenchicken.h"
 #include "ui_frozenchicken.h"
+#include "passwd.h"
 
 FrozenChicken::FrozenChicken(QWidget *parent)
     : QMainWindow(parent)
@@ -49,13 +50,8 @@ void FrozenChicken::on_switchbutton_clicked()
 
    // desligar o alarme
    if (is_activated){
-       file.open("C:\\FC_Backend\\alarm.fc", std::ios::out);
-
-       if (file.is_open()){
-          file << "0";
-       }
-
-       file.close();
+       passwd password;
+       password.exec();
    }
 
     return;
@@ -110,13 +106,15 @@ void FrozenChicken::on_verticalScrollBar_sliderMoved(int position)
 
 void FrozenChicken::on_registerbut_clicked()
 {
-    return;
     ui->registro2->setRowCount(5);
     ui->registro2->setColumnCount(2);
     int row = 0;
     int column = 0;
 
-    QTableWidgetItem *test = new QTableWidgetItem(tr("%1").arg((row+1)*(column+1)));
-    ui->registro2->setItem(row, column, test);
+
+    for (row; row<5; row++){
+        QTableWidgetItem *test = new QTableWidgetItem(tr("a"));
+        ui->registro2->setItem(row, column, test);
+    }
 }
 

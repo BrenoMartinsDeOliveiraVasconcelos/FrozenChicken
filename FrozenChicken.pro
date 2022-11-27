@@ -10,14 +10,17 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    frozenchicken.cpp
+    frozenchicken.cpp \
+    passwd.cpp
 
 HEADERS += \
     frozenchicken.h \
+    passwd.h \
     runtime.h
 
 FORMS += \
-    frozenchicken.ui
+    frozenchicken.ui \
+    passwd.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
