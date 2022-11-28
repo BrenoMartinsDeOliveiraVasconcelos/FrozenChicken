@@ -129,11 +129,10 @@ void FrozenChicken::on_registerbut_clicked()
                 ui->registro2->setItem(row, column, C);
             }
 
-            split_line.clear();
+            
         }
-
-        // remove na força bruta a linha repetida
-        ui->registro2->setRowCount(row-2);
+        
+        split_line.clear();
         row = -1;
         csvfile.close();
     }
