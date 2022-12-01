@@ -113,15 +113,13 @@ void FrozenChicken::on_registerbut_clicked()
 
     csvfile.open("C:\\FC_Backend\\registro.csv", std::ios::in);
     if (csvfile.is_open() && csvfile.good()){
-        while (std::getline(csvfile, line) && csvfile.fail() != true){
+        while (std::getline(csvfile, line)){
             row++;
             ui->registro2->insertRow(row);
             std::istringstream ln(line);
 
             while (std::getline(ln, part, ';')){
-                if (line != ""){
-                  split_line.push_back(part);
-                }
+                split_line.push_back(part);
             }
 
             for (int column=0; column<2; column++){
@@ -131,9 +129,6 @@ void FrozenChicken::on_registerbut_clicked()
 
             split_line.clear();
         }
-
-        // remove na força bruta a linha repetida
-        ui->registro2->setRowCount(row-2);
         row = -1;
         csvfile.close();
     }
