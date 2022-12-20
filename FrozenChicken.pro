@@ -12,18 +12,21 @@ SOURCES += \
     main.cpp \
     frozenchicken.cpp \
     options.cpp \
-    passwd.cpp
+    passwd.cpp \
+    sobre.cpp
 
 HEADERS += \
     frozenchicken.h \
     options.h \
     passwd.h \
-    runtime.h
+    runtime.h \
+    sobre.h
 
 FORMS += \
     frozenchicken.ui \
     options.ui \
-    passwd.ui
+    passwd.ui \
+    sobre.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

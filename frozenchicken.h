@@ -29,6 +29,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_sobre_clicked();
+
 private:
     Ui::FrozenChicken *ui;
 

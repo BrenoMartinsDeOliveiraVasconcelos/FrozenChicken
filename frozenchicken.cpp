@@ -9,6 +9,7 @@
 #include "ui_frozenchicken.h"
 #include "passwd.h"
 #include "options.h"
+#include "sobre.h"
 
 FrozenChicken::FrozenChicken(QWidget *parent)
     : QMainWindow(parent)
@@ -16,7 +17,7 @@ FrozenChicken::FrozenChicken(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
-    setWindowTitle("Frozen Chicken v1.0");
+    setWindowTitle("qtKeyAlarm v1.0");
 }
 
 FrozenChicken::~FrozenChicken()
@@ -148,5 +149,12 @@ void FrozenChicken::on_pushButton_clicked()
 {
     options opt;
     opt.exec();
+}
+
+
+void FrozenChicken::on_sobre_clicked()
+{
+    sobre about;
+    about.exec();
 }
 
