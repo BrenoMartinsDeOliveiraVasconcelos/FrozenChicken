@@ -20,9 +20,20 @@ passwd::~passwd()
 void passwd::on_ok_clicked()
 {
     auto input = ui->camp->text();
-    auto alarm_passwd = std::getenv("fc");
+    std::fstream alarm_passwd;
+    std::string password;
+    QString qPassword;
 
-    if (input ==  alarm_passwd){
+    alarm_passwd.open("C:\\FC_Backend\\backend.py", std::ios::in);
+
+    if (alarm_passwd.is_open()){
+        while (std::getline(alarm_passwd, password)){
+            qPassword = QString::fromStdString(password);
+            break;
+        }
+    }
+
+    if (input ==  qPassword){
         std::fstream alarm;
         alarm.open("C:\\FC_Backend\\alarm.fc", std::ios::out);
 

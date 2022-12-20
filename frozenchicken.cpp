@@ -8,12 +8,14 @@
 #include "frozenchicken.h"
 #include "ui_frozenchicken.h"
 #include "passwd.h"
+#include "options.h"
 
 FrozenChicken::FrozenChicken(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::FrozenChicken)
 {
     ui->setupUi(this);
+    setWindowFlags(Qt::Window | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
 }
 
 FrozenChicken::~FrozenChicken()
@@ -65,6 +67,12 @@ void FrozenChicken::on_pushButton_2_clicked(){
     std::cout << "Cliked";
 }
 
+void FrozenChicken::keyPressEvent(QKeyEvent *k){
+    std::fstream alarm_file;
+    alarm_file.open("C:\\FC_Backend\\alarm.fc", std::ios::out);
+    alarm_file << "1";
+    alarm_file.close();
+}
 
 void FrozenChicken::on_exit_clicked()
 {
@@ -132,5 +140,12 @@ void FrozenChicken::on_registerbut_clicked()
         row = -1;
         csvfile.close();
     }
+}
+
+// Botão de opções
+void FrozenChicken::on_pushButton_clicked()
+{
+    options opt;
+    opt.exec();
 }
 

@@ -11,15 +11,18 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     frozenchicken.cpp \
+    options.cpp \
     passwd.cpp
 
 HEADERS += \
     frozenchicken.h \
+    options.h \
     passwd.h \
     runtime.h
 
 FORMS += \
     frozenchicken.ui \
+    options.ui \
     passwd.ui
 
 # Default rules for deployment.

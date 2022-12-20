@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>334</width>
-    <height>262</height>
+    <width>400</width>
+    <height>277</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -16,53 +16,74 @@
     <height>0</height>
    </size>
   </property>
-  <property name="maximumSize">
-   <size>
-    <width>10000</width>
-    <height>10000</height>
-   </size>
-  </property>
-  <property name="palette">
-   <palette>
-    <active/>
-    <inactive/>
-    <disabled/>
-   </palette>
-  </property>
   <property name="windowTitle">
    <string>Frozen Chicken</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="registerbut">
-        <property name="text">
-         <string>Registro</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="switchbutton">
-        <property name="text">
-         <string>Desligar Alarme</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="exit">
-        <property name="text">
-         <string>Sair</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QLabel" name="ver">
+      <property name="text">
+       <string>Frozen Chicken v1.0.0 Beta</string>
+      </property>
+     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QTableWidget" name="registro2"/>
+       <widget class="QTableWidget" name="registro2">
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>138</number>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>30</number>
+        </attribute>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QPushButton" name="registerbut">
+          <property name="text">
+           <string>Registro</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="switchbutton">
+          <property name="text">
+           <string>Desl. Alarme</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Opções</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="exit">
+          <property name="text">
+           <string>Sair</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
@@ -73,7 +94,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>334</width>
+     <width>400</width>
      <height>21</height>
     </rect>
    </property>

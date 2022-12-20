@@ -26,7 +26,12 @@ private slots:
 
     void on_registerbut_clicked();
 
+
+    void on_pushButton_clicked();
+
 private:
     Ui::FrozenChicken *ui;
+
+    void keyPressEvent(QKeyEvent *k);
 };
 #endif // FROZENCHICKEN_H
