@@ -10,6 +10,7 @@ passwd::passwd(QWidget *parent) :
     ui(new Ui::passwd)
 {
     ui->setupUi(this);
+    setWindowTitle("Digite sua senha");
 }
 
 passwd::~passwd()

@@ -8,6 +8,7 @@ options::options(QWidget *parent) :
     ui(new Ui::options)
 {
     ui->setupUi(this);
+    setWindowTitle("Opções");
 }
 
 options::~options()
@@ -50,8 +51,33 @@ void options::on_okps_clicked()
         password.open("C:\\FC_Backend\\backend.py", std::ios::out);
         password << utf8_newpswd;
         password.close();
+
+        QMessageBox::information(this, "Senha alterada", "Senha alterada com sucesso");
     }else{
         QMessageBox::critical(this, "Senha incorreta", "Verifique a ortografia e tente novamente");
     }
 }
 
+
+void options::on_copy_clicked()
+{
+    QString path = ui->path->text();
+    std::string strPath = path.toLocal8Bit().constData();
+    std::ifstream r("C:\\FC_Backend\\registro.csv", std::ios::binary);
+    std::ofstream destination(strPath+"\\registro.csv", std::ios::binary);
+
+    // Checar o input
+    if (strPath != ""){
+        if (destination.is_open()){
+            destination << r.rdbuf();
+            QMessageBox::information(this, "Copiado", "Arquivo copiado para o caminho especificado.");
+        }else{
+            QMessageBox::critical(this, "Caminho inválido", "O caminho especificado é inválido ou já está em uso!");
+        }
+    }else{
+        QMessageBox::warning(this, "Caminho vazio", "O caminho está incorreto!");
+    }
+
+    r.close();
+    destination.close();
+}

@@ -6,21 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>198</width>
-    <height>268</height>
+    <width>453</width>
+    <height>152</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="3" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Antiga senha</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="3">
     <widget class="QPushButton" name="okps">
      <property name="text">
@@ -45,6 +38,23 @@
      </property>
     </widget>
    </item>
+   <item row="3" column="3">
+    <widget class="QLineEdit" name="oldps"/>
+   </item>
+   <item row="1" column="5">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Antiga senha</string>
+     </property>
+    </widget>
+   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
@@ -52,17 +62,38 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="3">
-    <widget class="QLineEdit" name="oldps"/>
-   </item>
-   <item row="6" column="3">
-    <widget class="QPushButton" name="exitopt">
+   <item row="1" column="4">
+    <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>Ok</string>
+      <string>Copiar registro</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="3" column="4">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Caminho</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="6">
+    <widget class="QLineEdit" name="path"/>
+   </item>
+   <item row="1" column="6">
+    <widget class="QPushButton" name="copy">
+     <property name="text">
+      <string>Copiar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="6">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -74,6 +105,13 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="6" column="6">
+    <widget class="QPushButton" name="exitopt">
+     <property name="text">
+      <string>Ok</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

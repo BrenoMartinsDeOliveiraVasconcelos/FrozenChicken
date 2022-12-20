@@ -16,6 +16,7 @@ FrozenChicken::FrozenChicken(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
+    setWindowTitle("Frozen Chicken v1.0");
 }
 
 FrozenChicken::~FrozenChicken()

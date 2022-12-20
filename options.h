@@ -20,6 +20,8 @@ private slots:
 
     void on_okps_clicked();
 
+    void on_copy_clicked();
+
 private:
     Ui::options *ui;
 };
