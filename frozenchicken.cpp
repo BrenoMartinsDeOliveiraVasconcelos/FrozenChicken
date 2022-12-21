@@ -18,6 +18,7 @@ FrozenChicken::FrozenChicken(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
     setWindowTitle("qtKeyAlarm v1.0");
+    grabKeyboard();
 }
 
 FrozenChicken::~FrozenChicken()
@@ -74,6 +75,8 @@ void FrozenChicken::keyPressEvent(QKeyEvent *k){
     alarm_file.open("C:\\FC_Backend\\alarm.fc", std::ios::out);
     alarm_file << "1";
     alarm_file.close();
+
+    this->releaseKeyboard();
 }
 
 void FrozenChicken::on_exit_clicked()
