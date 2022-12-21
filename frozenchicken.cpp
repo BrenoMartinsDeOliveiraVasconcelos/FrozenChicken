@@ -11,14 +11,22 @@
 #include "options.h"
 #include "sobre.h"
 
+QString alarmst();
+
+
 FrozenChicken::FrozenChicken(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::FrozenChicken)
 {
     ui->setupUi(this);
+    FrozenChicken::showMaximized();
     setWindowFlags(Qt::Window | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
-    setWindowTitle("qtKeyAlarm v1.0");
+    setWindowTitle("QTKeyAlarm v1.0");
     grabKeyboard();
+
+
+    // Seta o label de status
+    ui->status->setText(alarmst());
 }
 
 FrozenChicken::~FrozenChicken()
@@ -59,6 +67,7 @@ void FrozenChicken::on_switchbutton_clicked()
    if (is_activated){
        passwd password;
        password.exec();
+       ui->status->setText(alarmst());
    }
 
     return;
@@ -77,6 +86,7 @@ void FrozenChicken::keyPressEvent(QKeyEvent *k){
     alarm_file.close();
 
     this->releaseKeyboard();
+    ui->status->setText(alarmst());
 }
 
 void FrozenChicken::on_exit_clicked()
@@ -116,7 +126,7 @@ void FrozenChicken::on_registerbut_clicked()
 {
     ui->registro2->clearContents();
     ui->registro2->setRowCount(1);
-    ui->registro2->setColumnCount(2);
+    ui->registro2->setColumnCount(100);
 
     int row = -1;
     std::fstream csvfile;
@@ -161,3 +171,24 @@ void FrozenChicken::on_sobre_clicked()
     about.exec();
 }
 
+QString alarmst(){
+    std::fstream alarmf;
+    std::string ct;
+
+    alarmf.open("C:\\FC_Backend\\alarm.fc", std::ios::in);
+    if (alarmf.is_open()){
+        while (std::getline(alarmf, ct)){
+            if (ct == "0"){
+                return "Alarme está desativado.";
+            }else if (ct == "1"){
+                return "Alarme está ativado!";
+            }else{
+                return "Status de alarme inválido!";
+            }
+        }
+    }else{
+        return "Erro ao abrir o arquivo de alarme!";
+    }
+
+    return "Um erro inesperado ocorreu na função alarmst()";
+}

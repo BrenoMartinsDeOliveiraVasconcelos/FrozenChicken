@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>277</height>
+    <height>302</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -20,13 +20,16 @@
    <string>Frozen Chicken</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>v1.0.0 Beta</string>
+         <string>QTKeyAlarm v1.0.0 Beta</string>
         </property>
        </widget>
       </item>
@@ -88,13 +91,6 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="exit">
-          <property name="text">
-           <string>Sair</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -107,9 +103,26 @@
           </property>
          </spacer>
         </item>
+        <item>
+         <widget class="QPushButton" name="exit">
+          <property name="text">
+           <string>Sair</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="status">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>PLACEHOLDER</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
