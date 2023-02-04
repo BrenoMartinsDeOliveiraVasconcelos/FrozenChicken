@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Frozen Chicken</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(179, 245, 221);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true"/>
@@ -28,6 +31,10 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string>color: rgb(0, 0, 0);
+font: 9pt &quot;Segoe UI&quot;;</string>
+        </property>
         <property name="text">
          <string>QTKeyAlarm v1.0.0 Beta</string>
         </property>
@@ -35,6 +42,15 @@
       </item>
       <item>
        <widget class="QPushButton" name="sobre">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(146, 153, 214);
+border-color: rgb(48, 48, 48);
+color: rgb(0, 0, 0);
+
+
+
+</string>
+        </property>
         <property name="text">
          <string>Sobre</string>
         </property>
@@ -56,9 +72,31 @@
      </layout>
     </item>
     <item>
+     <widget class="QLabel" name="status">
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>22</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+font: 700 22pt &quot;Segoe UI&quot;;</string>
+      </property>
+      <property name="text">
+       <string>PLACEHOLDER</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QTableWidget" name="registro2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255)</string>
+        </property>
         <attribute name="horizontalHeaderDefaultSectionSize">
          <number>138</number>
         </attribute>
@@ -68,61 +106,77 @@
        </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <widget class="QPushButton" name="registerbut">
-          <property name="text">
-           <string>Registro</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="switchbutton">
-          <property name="text">
-           <string>Desl. Alarme</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Opções</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="exit">
-          <property name="text">
-           <string>Sair</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="verticalLayout_4"/>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QLabel" name="status">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>PLACEHOLDER</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="registerbut">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(146, 153, 214);
+border-color: rgb(48, 48, 48);
+color: rgb(0, 0, 0);
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Registro</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="switchbutton">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(146, 153, 214);
+border-color: rgb(48, 48, 48);
+color: rgb(0, 0, 0);
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Desl. Alarme</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(146, 153, 214);
+border-color: rgb(48, 48, 48);
+color: rgb(0, 0, 0);
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Opções</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exit">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(146, 153, 214);
+border-color: rgb(48, 48, 48);
+color: rgb(0, 0, 0);
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Sair</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setStyle("fusion");
     FrozenChicken w;
     w.show();
 

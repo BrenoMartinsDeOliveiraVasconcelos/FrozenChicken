@@ -19,7 +19,6 @@ FrozenChicken::FrozenChicken(QWidget *parent)
     , ui(new Ui::FrozenChicken)
 {
     ui->setupUi(this);
-    FrozenChicken::showMaximized();
     setWindowFlags(Qt::Window | Qt::WindowMinimizeButtonHint | Qt::WindowMaximizeButtonHint);
     setWindowTitle("QTKeyAlarm v1.0");
     grabKeyboard();
